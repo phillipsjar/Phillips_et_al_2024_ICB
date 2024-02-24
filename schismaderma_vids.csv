@@ -1,0 +1,17 @@
+﻿,Code,Run_number,genus,lungs,habitat,treatment,1_1,1_2,1_3,1_4,1_5,2_1,2_2,2_3,2_4,2_5,3_1,3_2,3_3,3_4,3_5,4_1,4_2,4_3,4_4,4_5
+340,LIMP_polok_01 ,15,Schismaderma ,0,1,high,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA,0,0,0,NA,NA
+341,LIMP_polok_02 ,15,Schismaderma ,0,1,high,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA,0,0,0,NA,NA
+344,LIMP_polok_05 ,15,Schismaderma ,0,1,high,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA,0,0,0,NA,NA
+346,LIMP_polok_07 ,15,Schismaderma ,0,1,high,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA,0,0,0,NA,NA
+347,LIMP_polok_08 ,15,Schismaderma ,0,1,high,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA,0,0,0,NA,NA
+348,LIMP_polok_09 ,15,Schismaderma ,0,1,high,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA,0,0,0,NA,NA
+350,LIMP_polok_11 ,15,Schismaderma ,0,1,high,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA,0,0,0,NA,NA
+352,LIMP_polok_13 ,15,Schismaderma ,0,1,high,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA,0,0,0,NA,NA
+355,LIMP_polok_16 ,15,Schismaderma ,0,1,low,0,0,0,0,0,0,0,1,1,1,0,0,0,NA,NA,0,0,1,1,NA
+358,LIMP_polok_19 ,15,Schismaderma ,0,1,low,0,0,0,0,0,1,1,1,1,1,1,1,1,NA,NA,1,,1,1,NA
+360,LIMP_polok_21 ,15,Schismaderma ,0,1,low,1,1,1,1,0,0,0,0,1,0,1,1,0,NA,NA,1,1,1,0,NA
+361,LIMP_polok_22 ,15,Schismaderma ,0,1,low,0,0,0,0,0,0,0,1,1,1,1,0,0,NA,NA,1,1,1,0,NA
+362,LIMP_polok_23 ,15,Schismaderma ,0,1,low,1,1,0,0,0,0,1,0,0,0,1,0,0,NA,NA,1,1,0,0,NA
+363,LIMP_polok_24 ,15,Schismaderma ,0,1,low,0,0,0,1,1,0,0,1,1,1,0,0,0,NA,NA,0,0,0,0,NA
+364,LIMP_polok_25 ,15,Schismaderma ,0,1,low,0,0,1,1,1,1,1,1,0,0,1,1,1,NA,NA,0,0,0,0,NA
+365,LIMP_polok_26 ,15,Schismaderma ,0,1,low,0,0,1,1,0,0,0,1,1,1,1,1,1,NA,NA,0,0,0,1,NA
