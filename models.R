@@ -1,9 +1,7 @@
 #### trying some modeling approaches
-setwd("/Users/jack/Desktop/Research/ICB_Phys/physiology/physiology_space")
+setwd("/Phillips_et_al_2024_ICB")
 
-rm(list=ls())
-
-load(file = "data/full_data.RData")
+load(file = "full_data.RData")
 
 # primary responsiveness model
 
@@ -15,7 +13,7 @@ library(evolvability)
 library(ape)
 library(car)
 
-tree <- read.tree("data/resp_tree.tre") #Portik et al tree previously trimmed and names replaced with genera
+tree <- read.tree("resp_tree.tre") #Portik et al tree previously trimmed and names replaced with genera
 plot(tree)                              #check to make sure tree makes sense
 A <- Matrix::Matrix(ape::vcv(tree), sparse = TRUE) # create matrix of relatedness
 colnames(A) <- rownames(A) <- tree$tip.label       # fix row and column names
@@ -96,7 +94,7 @@ pairs(hab_treat_slope)
 
 rm(list=ls())
 
-load(file = "data/lung_matrix.RData")
+load(file = "lung_matrix.RData")
 
 #remove two genera with very few observations/individuals for genus-level analyses
 lung_matrix2 <- lung_matrix[which(lung_matrix$genus != "Phrynomantis"),]
@@ -136,7 +134,7 @@ save(b, file = "data/emm_genus.RData") #save emms for Fig. 3
 
 rm(list=ls())
 
-load(file = "data/full_data.RData")
+load(file = "full_data.RData")
 
 #only keep relevant rows with climbing taxa:
 heleodata <- full_data[which(full_data$Genus == "Heleophryne" | full_data$Genus == "Hadromophryne"),]
@@ -171,7 +169,7 @@ anova(heleo_mod_full, heleo_mod_simp)
 
 rm(list=ls())
 
-schis_data <- read.csv("data/schismaderma_vids.csv") #raw data 
+schis_data <- read.csv("schismaderma_vids.csv") #raw data 
 
 #reformat data for modeling
 schis_data_stack <- as.data.frame(matrix(ncol = 10, 
