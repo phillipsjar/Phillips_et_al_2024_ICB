@@ -1,10 +1,10 @@
 # supplemental analyses
-
+setwd("/Phillips_et_al_2024_ICB")
 
 #test an ordinal model of responsiveness
 rm(list=ls())
 
-load(file = "data/full_data.RData")
+load(file = "full_data.RData")
 
 #first do our best to fit expected model type: ordinal data
 library(ordinal)
@@ -22,20 +22,21 @@ mod_clmm5 <- update(mod_clmm3, ~.-habitat_factor:lung_factor:treatment)
 
 anova(mod_clmm, mod_clmm2, mod_clmm3, mod_clmm4, mod_clmm5)
 summary(mod_clmm5)
-summary(phylo_mod5)
 a <- coef(mod_clmm5)[1:4]
-
 # very evenly spaced, justifying a non-ordinal approach
 
+##################################
+# test effects of adding phylogenetic component to video models
+
 rm(list=ls())
-load(file = "data/lung_matrix.RData")
+load(file = "lung_matrix.RData")
 
 lung_matrix2 <- lung_matrix[which(lung_matrix$genus != "Phrynomantis"),]
 lung_matrix2 <- lung_matrix2[which(lung_matrix2$genus != "Strongylopus"),]
 
 library(phyr)
 library(ape)
-tree <- read.tree("data/vid_tree.tre")
+tree <- read.tree("vid_tree.tre")
 
 phylo_mod <- phyr::communityPGLMM(sums ~ habitat*treatment + offset(log(num_periods)) + (1|run) +
                                      (1|genus__) + (1 | genus__@population), cov_ranef = list(genus = tree), 
