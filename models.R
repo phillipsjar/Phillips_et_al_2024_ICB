@@ -1,7 +1,7 @@
 #### trying some modeling approaches
 setwd("/Phillips_et_al_2024_ICB")
 
-load(file = "full_data.RData")
+load(file = "data/full_data.RData")
 
 # primary responsiveness model
 
@@ -13,7 +13,7 @@ library(evolvability)
 library(ape)
 library(car)
 
-tree <- read.tree("resp_tree.tre") #Portik et al tree previously trimmed and names replaced with genera
+tree <- read.tree("data/resp_tree.tre") #Portik et al tree previously trimmed and names replaced with genera
 plot(tree)                              #check to make sure tree makes sense
 A <- Matrix::Matrix(ape::vcv(tree), sparse = TRUE) # create matrix of relatedness
 colnames(A) <- rownames(A) <- tree$tip.label       # fix row and column names
@@ -68,7 +68,7 @@ habitat_em$`simple contrasts for treatment`   #test treatment effects within str
 habitat_em$`simple contrasts for habitat_factor` #test habitat effects within high and low treatments
 
 # custom contrast to be compared 
-habitat_treatment <- contrast(emm_habitat, list("habitated_low_high" = c(-1,1,0,0), "habitatless_low_high" = c(0,0,-1,1)), adjust = "bonferroni")
+habitat_treatment <- contrast(emm_habitat, list("pond_low_high" = c(-1,1,0,0), "stream_low_high" = c(0,0,-1,1)), adjust = "bonferroni")
 pairs(habitat_treatment) #compare differences at high and low for habitated and habitatless
 
 # compare trends (slopes) as well, not just point comparisons at a given temp_diff
@@ -94,7 +94,7 @@ pairs(hab_treat_slope)
 
 rm(list=ls())
 
-load(file = "lung_matrix.RData")
+load(file = "data/lung_matrix.RData")
 
 #remove two genera with very few observations/individuals for genus-level analyses
 lung_matrix2 <- lung_matrix[which(lung_matrix$genus != "Phrynomantis"),]
@@ -134,7 +134,7 @@ save(b, file = "data/emm_genus.RData") #save emms for Fig. 3
 
 rm(list=ls())
 
-load(file = "full_data.RData")
+load(file = "data/full_data.RData")
 
 #only keep relevant rows with climbing taxa:
 heleodata <- full_data[which(full_data$Genus == "Heleophryne" | full_data$Genus == "Hadromophryne"),]
@@ -169,7 +169,7 @@ anova(heleo_mod_full, heleo_mod_simp)
 
 rm(list=ls())
 
-schis_data <- read.csv("schismaderma_vids.csv") #raw data 
+schis_data <- read.csv("data/schismaderma_vids.csv") #raw data 
 
 #reformat data for modeling
 schis_data_stack <- as.data.frame(matrix(ncol = 10, 
